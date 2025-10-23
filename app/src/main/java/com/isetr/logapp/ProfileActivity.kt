@@ -103,12 +103,12 @@ class ProfileActivity : AppCompatActivity() {
     }
 
     private fun performLogout() {
-        val intent = Intent(this, LoginActivity::class.java).apply {
+        val intent = Intent(this, LoginActivity::class.java)
             // Ces drapeaux effacent toutes les activités de la pile
             // (y compris ProfileActivity) et démarrent LoginActivity comme la seule.
-            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-        }
+           // flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(intent)
+        finish()
     }
 }
 
@@ -119,8 +119,3 @@ class ProfileActivity : AppCompatActivity() {
 
 
 
-/*override fun onCreate(savedInstanceState: Bundle?) {
-    super.onCreate(savedInstanceState)
-    setContentView(R.layout.activity_profile)
-
-}*/
